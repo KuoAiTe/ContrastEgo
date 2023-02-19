@@ -1,0 +1,91 @@
+
+raw_db:
+  control_group: 'raw_control_group'
+  depressed_group: 'raw_depressed_group'
+  host: '127.0.0.1'
+  port: 27017
+  username: ""
+  password: ""
+  #csv_dir: '/home/aite/med/MentalNet'
+  csv_dir: '/media/aite/OS/ms_proj/MentalNet'
+
+
+new_db:
+  control_group: 'raw_control_group'
+  depressed_group: 'raw_depressed_group'
+  host: '127.0.0.1'
+  port: 27017
+  username: ""
+  password: ""
+  #csv_dir: '/home/aite/med/MentalNet'
+  csv_dir: '/media/aite/OS/ms_proj/MentalNet'
+
+parameters:
+  time_interval_in_month: 3
+
+collection_names:
+  users: users
+  user_tweets: user_tweets
+  user_interactions: user_interactions
+  friends: friends
+  friend_tweets: friend_tweets
+  user_tweet_prior_diagnose: user_tweet_prior_diagnose
+  stats_mentions: stats_mentions
+  stats_replies: stats_replies
+  stats_quote_tweets: stats_quote_tweets
+  period_interaction_cache: period_interaction_cache
+
+users:
+  control_group:
+    inserted_log_file: "control_friends_inserted.txt"
+    csv_location: "control_group/user_tweets/**.csv"
+  depressed_group:
+    inserted_log_file: "depressed_friends_inserted.txt"
+    csv_location: "depressed_group/user_tweets/**.csv"
+
+friends:
+  control_group:
+    inserted_log_file: "control_friends_inserted.txt"
+    csv_dir: "control_group/friend_tweets/"
+    csv_location: "control_group/friend_tweets/*/**.csv"
+  depressed_group:
+    inserted_log_file: "depressed_friends_inserted.txt"
+    csv_dir: "depressed_group/friend_tweets/"
+    csv_location: "depressed_group/friend_tweets/*/**.csv"
+
+users_final_tweet:
+  control_group:
+    csv_location: "control_group/user_tweets/**.csv"
+  depressed_group:
+    csv_location: "depressed_group/user_tweets/**.csv"
+
+stats_mentions:
+  control_group:
+    csv_location: "control_group/user_tweets/**.csv"
+    friends_location: "control_group/friend_tweets/"
+    users_location: "control_group/user_tweets/"
+  depressed_group:
+    csv_location: "depressed_group/user_tweets/**.csv"
+    friends_location: "depressed_group/friend_tweets/"
+    users_location: "depressed_group/user_tweets/"
+
+stats_replies:
+  control_group:
+    csv_location: "control_group/user_tweets/**.csv"
+    friends_location: "control_group/friend_tweets/"
+    users_location: "control_group/user_tweets/"
+  depressed_group:
+    csv_location: "depressed_group/user_tweets/**.csv"
+    friends_location: "depressed_group/friend_tweets/"
+    users_location: "depressed_group/user_tweets/"
+stats_quote_tweet:
+  control_group:
+    csv_location: "control_group/user_tweets/**.csv"
+    friends_location: "control_group/friend_tweets/"
+    users_location: "control_group/user_tweets/"
+  depressed_group:
+    csv_location: "depressed_group/user_tweets/**.csv"
+    friends_location: "depressed_group/friend_tweets/"
+    users_location: "depressed_group/user_tweets/"
+
+group_types: [depressed_group, control_group]
